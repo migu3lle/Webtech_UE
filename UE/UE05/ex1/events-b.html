@@ -1,0 +1,40 @@
+/*
+Webtech - Excercise 5.1 b) - Events
+Michael Gundacker 1646765
+*/
+
+<html>
+<body>
+
+<div id="outer" style="width:700;height:500;background-color:silver">Outer
+	<div id="inner" style="width:500;height:300;background-color:blue;margin:50px;top:20px;position:relative">Inner</div>
+</div>
+
+<script>
+
+//Eventhandler für 'click'
+function clicked(e, p1) {
+	console.log('p1 = ' + p1)
+
+	if(p1){
+		console.log("This:" + this.id);
+		console.log("Target:" + e.target.id);
+		console.log("Current Target:" + e.currentTarget.id);
+	}
+	//Hier wird die Ausbreitung des Events nach oben ("Bubbling") unterbrochen
+	e.stopPropagation();
+}
+
+//Handler mit Parameter aufs äußere Element
+//Hier wird eine anonyme Funktion als Event-Function angegeben, welche die tatsächliche
+//Event-Function mit Parameter aufruft
+document.getElementById("outer").addEventListener("click", function(e){
+	clicked(e, true)
+})
+
+//document.getElementById("inner").addEventListener('newEvent', clicked);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+/*
+Webtech - Excercise 5.1 a) - Events
+Michael Gundacker 1646765
+*/
+
+<html>
+<body>
+
+<div id="outer" style="width:700;height:500;background-color:silver">Outer
+	<div id="inner" style="width:500;height:300;background-color:blue;margin:50px;top:20px;position:relative">Inner</div>
+</div>
+
+<script>
+
+//Eventhandler für 'click'
+function clicked(e) {
+	console.log("This:" + this.id);
+	console.log("Target:" + e.target.id);
+	console.log("Current Target:" + e.currentTarget.id);
+
+	//Hier wird die Ausbreitung des Events nach oben ("Bubbling") unterbrochen
+	e.stopPropagation();
+}
+
+//Handler aufs äußere Element
+document.getElementById("outer").addEventListener("click",clicked);
+//Handler aufs innere Element
+//document.getElementById("inner").addEventListener("click",clicked);
+
+/*
+Folgende Szenarien sind darzustellen
+ 1) Handler outer & inner mit stopPropagation
+	Events treten an jedem Element auf, werden aber nicht weitergegeben
+ 2) Handler outer & inner ohne stopPropagation
+	Events treten an jedem Element auf. Klick aufs innere führt zuerst Handler im inneren, dann Handler im äußeren aus.
+ 3) Handler outer - Klick auf inner
+	Event wird am innersten nicht behandelt und weitergegeben. Äußeres behandelt das Event dann.
+*/
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+/*
+Webtech - Excercise 5.1 c) a) - Events
+Michael Gundacker 1646765
+*/
+
+<html>
+<body>
+
+<div id="p1" style="background-color:blue;width:200px;height:200px"></div>
+<div id="p2" style="background-color:red;width:200px;height:200px"></div>
+
+</div>
+
+<script>
+
+
+class Person {
+	constructor(firstname, lastname, element) {
+		this.firstname = firstname;
+		this.lastname = firstname;
+		this.elem = element;
+		
+		//Lösung mit bind() Methode
+		//Erzeugt eine neue Funktion, die beim Aufruf ihr this
+		//Schlüsselwort auf den übergebenen Wert setzt.
+		//Dadurch ist beim Aufruf des sayHello() im DIV-Scope das
+		//this Element trotzdem das Person Element.
+		this.sayHello = this.sayHello.bind(this)
+		
+		this.elem.addEventListener("click",this.sayHello);
+	}
+	
+	sayHello(e) {
+		console.log(e);		// explain me!
+		console.log(this);	// explain me!
+
+		//Error: Cannot set property 'innerHTML' of undefined
+		//Wenn ein Event die sayHello() aufruft, befindet man sich im Scope 
+		//des DOM Elements, in diesem Fall das jeweilige DIV
+		//Hier ist "elem" nicht bekannt (undefined)!
+		this.elem.innerHTML = this.firstname;
+		this.elem.innerHTML += " "+this.lastname;
+	}
+}
+
+let person1= new Person("John","Doe",document.getElementById("p1"));
+let person2= new Person("Martina","Mustermann",document.getElementById("p2"));
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<style>
+
+input:invalid {color:red;}
+textarea:invalid {color:red;}
+
+</style>
+</head>
+<body>
+<h1>Your Glass Order</h1>
+
+<form action="mailto:michaelgun@edu.aau.at?subject=Glas Order" method="post" enctype="text/plain">
+	<fieldset>
+		<legend textcolor><strong>Personal Data</strong></legend>
+		<div>
+			<label for:"title">
+				Title:
+			</label>
+			<input type="text" name="title" id=title placeholder="Mag.">
+		</div>
+		<div>
+			<label for:"firstName">
+				First Name:
+			</label>
+			<input type="text" name="firstName" id=firstName placeholder="Max" required>
+		</div>
+		<div>
+			<label for:"lastName">
+				Last Name:
+			</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Mustermann" required>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend><strong>Delivery Address</strong></legend>
+		<div>
+			<label for:"address1">
+				Address:
+			</label>
+			<input type="text" name="address1" id="address1" placeholder="Example Street 1" required>
+		</div>
+		<div>
+			<label for:"zip">
+				ZIP Code:
+			</label>
+			<input type="text" name="zip" id="zip" placeholder="1234" required>
+		</div>
+		<div>
+			<label for:"city">
+				City:
+			</label>
+			<input type="text" name="city" id="city" placeholder="Wien" required>
+		</div>
+		<div>
+			<label for:"country">
+				Country:
+			</label>
+			<input type="text" name="country" id="country" required>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend><strong>Contact Details</strong></legend>
+		<div>
+			<label for:"email">
+				E-mail:
+			</label>
+			<input type="email" name="email" id="email" required>
+		</div>
+		<div>
+			<label for:"phone">
+				Phone:
+			</label>
+			<input type="tel" name="phone" id="phone">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend><strong>Product Details</strong></legend>
+		<div>
+			<label for:"paneSize">
+				Pane Format:
+			</label>
+			<input list="paneSize" id="sizeSelection" name="sizeSelection" required>
+			<datalist id="paneSize">
+				<option value="50x500">
+				<option value="100x100">
+				<option value="150x150">
+				<option value="200x200">
+			</datalist>
+		</div>
+		<div>
+			<label for:"paneType">
+				Pane Thickness:
+			</label>
+			<input list="paneType" id="typeSelection" name="typeSelection" required>
+			<datalist id="paneType">
+				<option value="4mm">
+				<option value="6mm">
+				<option value="8mm">
+				<option value="12mm">
+			</datalist>
+		</div>
+		<div>
+			<label for:"paneColor">
+				Pane Color:
+			</label>
+			<input type="color" name="paneColor" id="paneColor" required>
+		</div>
+	</fieldset>
+	<fieldset>
+		<label for:"comment">
+			Comment:
+		</label>
+		<textarea maxlength=700 name="comment" id="comment"></textarea>
+	</fieldset>
+<input type="submit">
+</form>
+
+
+</body>
+
+</html>

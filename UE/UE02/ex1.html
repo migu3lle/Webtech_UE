@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Table Example</title>
+		<style>
+			thead { background-color:darkblue; color:white;}
+			tfoot { background-color:black; color:white;}
+			table {text-align:center;}
+			th[scope=row]{text-align:left; background-color:silver}
+			th[scope=col]  {text-align:center; min-width:150px}
+			tfoot th[scope=row] {text-align:center; min-width:150px; background-color: black}
+			td[rowspan][colspan] {background-color:LightSalmon ;}
+			table caption {caption-side: bottom; font-weight:bolder}
+			table {  border: 1px solid black;  border-collapse: collapse;}
+		</style>
+</head>
+
+<body>
+<h1>Table Example</h1>
+
+<table width=90%>
+	<caption>Sales 2018 1-5</caption>
+	<thead>
+		<tr>
+			<th>Category</th>
+			<th>Austria</th>
+			<th>Germany</th>
+			<th>Switzerland</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Automotive</th>
+			<td>120,000</td>
+			<td>1,200,000</td>
+			<td>100,000</td>
+		</tr>
+		<tr>
+			<th>Construction</th>
+			<td>420,000</td>
+			<td Colspan=2 Rowspan=2>0</td>
+		</tr>
+		<tr>
+			<th>Engineering</th>
+			<td>350,000</td>
+		</tr>
+		<tr>
+			<th>IT</th>
+			<td>120,000</td>
+			<td>500,000</td>
+			<td>90,000</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Totals</th>
+			<td>1,010,000</td>
+			<td>1,700,000</td>
+			<td>190,000</td>
+		</tr>
+	</tfoot>
+	Add your solution here. Leave all the rest intact!
+</table>
+</body>
+
+</html>
